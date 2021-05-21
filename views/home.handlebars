@@ -106,6 +106,17 @@
             var unit = document.querySelector('input[name = "edit-unit"]:checked').value;
 
 
+            console.log(name, reps, weight, date, unit)
+            if (reps == "") {
+                reps = -1
+            }
+            if (weight == "") {
+                weight = -1
+            }
+            if (date == "") {
+                date = "9999-12-31"
+            }
+
 
             req.open('GET', '/edit?id=' + id + '&name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + unit, true);
             req.addEventListener('load', function () {
