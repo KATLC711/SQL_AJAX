@@ -74,9 +74,9 @@
 
 
 
-        PullData('load');
+        PullData();
 
-        function PullData(event) {
+        function PullData() {
             var req = new XMLHttpRequest();
             req.open('GET', '/pull', true);
             req.addEventListener('load', function () {
@@ -89,7 +89,6 @@
                 }
             });
             req.send(null);
-            event.preventDefault();
         };
 
 
