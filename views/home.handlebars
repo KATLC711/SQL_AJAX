@@ -195,7 +195,7 @@
 
 
         function PullData() {
-            console.log("Hello")
+
             var req = new XMLHttpRequest();
             req.open('GET', '/pull', true);
             req.addEventListener('load', function () {
@@ -204,7 +204,7 @@
                     var response = JSON.parse(req.responseText);
                     var response2 = JSON.parse(response.results);
                     DOMtable(response2);
-                    console.log("Hello")
+
                 } else {
                     console.log("Error in network request: " + req.statusText);
                 }
@@ -275,7 +275,7 @@
                 let record_id = rows[i].id
                 delete_btn.innerHTML = 'Delete';
                 delete_btn.onclick = function () {
-
+                    console.log("Hello")
                     var req = new XMLHttpRequest();
                     req.open('GET', '/delete?id=' + record_id, true);
                     req.addEventListener('load', function () {
@@ -283,6 +283,7 @@
                             var response = JSON.parse(req.responseText);
                             var response2 = JSON.parse(response.results);
                             DOMtable(response2);
+                            console.log("Hello")
                             return;
                         } else {
                             console.log("Error in network request: " + req.statusText);
