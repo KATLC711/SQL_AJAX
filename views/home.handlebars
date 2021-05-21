@@ -145,7 +145,7 @@
         document.getElementById('submit').addEventListener('click', function (event) {
 
             var name = document.getElementById('name').value;
-            console.log(name)
+            console.log(name === "")
             if (name != "") {
                 var req = new XMLHttpRequest();
                 var reps = document.getElementById('reps').value;
