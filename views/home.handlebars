@@ -207,12 +207,16 @@
                 } else {
                     TBodyContent.textContent = rows[i].reps
                 }
-
-
                 TBodyRow.appendChild(TBodyContent)
 
+
+
                 var TBodyContent = document.createElement("td")
-                TBodyContent.textContent = rows[i].weight
+                if (rows[i].weight == -1) {
+                    TBodyContent.textContent = ""
+                } else {
+                    TBodyContent.textContent = rows[i].weight
+                }
                 TBodyRow.appendChild(TBodyContent)
 
                 var TBodyContent = document.createElement("td")
