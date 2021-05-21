@@ -92,6 +92,7 @@
                 if (req.status >= 200 && req.status < 400) {
 
                     console.log("Success!")
+                    location.reload();
 
                 } else {
                     console.log("Error in network request: " + req.statusText);
