@@ -42,12 +42,12 @@
         <table>
             <thead>
                 <tr>
-                    <th>id</th>
                     <th>Name</th>
                     <th>Reps</th>
                     <th>Weight</th>
                     <th>Date</th>
                     <th>Unit</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody id="content-table">
@@ -126,9 +126,6 @@
             for (i = 0; i <= rows.length; i++) {
                 var TBodyRow = document.createElement("tr")
 
-                var TBodyContent = document.createElement("td")
-                TBodyContent.textContent = rows[i].id
-                TBodyRow.appendChild(TBodyContent)
 
                 var TBodyContent = document.createElement("td")
                 TBodyContent.textContent = rows[i].name
