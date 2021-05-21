@@ -102,41 +102,41 @@
 
             if (name != "") {
                 var req = new XMLHttpRequest();
-                var id = document.getElementById('edit-id').value;
-                var reps = document.getElementById('edit-reps').value;
-                var weight = document.getElementById('edit-weight').value;
-                var date = document.getElementById('edit-date').value;
-                var unit = document.querySelector('input[name = "edit-unit"]:checked').value;
+                //var id = document.getElementById('edit-id').value;
+                //var reps = document.getElementById('edit-reps').value;
+                //var weight = document.getElementById('edit-weight').value;
+                //var date = document.getElementById('edit-date').value;
+                //var unit = document.querySelector('input[name = "edit-unit"]:checked').value;
 
-                /*
-                                console.log(name, reps, weight, date, unit)
-                                if (reps == "") {
-                                    reps = -1
-                                }
-                                if (weight == "") {
-                                    weight = -1
-                                }
-                                if (date == "") {
-                                    date = "9999-12-31"
-                                }
-                
-                                req.open('GET', '/edit?id=' + id + '&name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + unit, true);
-                                req.addEventListener('load', function () {
-                                    if (req.status >= 200 && req.status < 400) {
-                                        console.log("Success!")
-                                        closeEditForm();
-                                        var response = JSON.parse(req.responseText);
-                                        var response2 = JSON.parse(response.results);
-                                        DOMtable(response2);
-                
-                
-                                    } else {
-                                        console.log("Error in network request: " + req.statusText);
-                                    }
-                                });
-                                req.send(null);
-                                event.preventDefault();
-                */
+
+                console.log(name, reps, weight, date, unit)
+                if (reps == "") {
+                    reps = -1
+                }
+                if (weight == "") {
+                    weight = -1
+                }
+                if (date == "") {
+                    date = "9999-12-31"
+                }
+
+                req.open('GET', '/edit?id=' + id + '&name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + unit, true);
+                req.addEventListener('load', function () {
+                    if (req.status >= 200 && req.status < 400) {
+                        console.log("Success!")
+                        closeEditForm();
+                        var response = JSON.parse(req.responseText);
+                        var response2 = JSON.parse(response.results);
+                        DOMtable(response2);
+
+
+                    } else {
+                        console.log("Error in network request: " + req.statusText);
+                    }
+                });
+                req.send(null);
+                event.preventDefault();
+
             }
 
         });
@@ -170,7 +170,7 @@
 
                 //console.log(name, reps, weight, date, unit)
                 console.log("Insert!")
-                /*
+
                 req.open('GET', '/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + unit, true);
                 req.addEventListener('load', function () {
                     if (req.status >= 200 && req.status < 400) {
@@ -187,7 +187,7 @@
                 });
                 req.send(null);
                 event.preventDefault();
-                */
+
             }
         });
 
@@ -275,7 +275,7 @@
                 let record_id = rows[i].id
                 delete_btn.innerHTML = 'Delete';
                 delete_btn.onclick = function () {
-                    console.log("Hello")
+
                     var req = new XMLHttpRequest();
                     req.open('GET', '/delete?id=' + record_id, true);
                     req.addEventListener('load', function () {
@@ -283,7 +283,7 @@
                             var response = JSON.parse(req.responseText);
                             var response2 = JSON.parse(response.results);
                             DOMtable(response2);
-                            console.log("Hello")
+
                             return;
                         } else {
                             console.log("Error in network request: " + req.statusText);
