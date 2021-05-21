@@ -24,11 +24,11 @@
                 <input type="number" name="weight" id="weight"><br>
                 <label>Date</label><br>
                 <input type="date" name="date" id="date"><br>
-                <div id="units">
+                <div>
                     <label>Unit</label><br>
-                    <input type="radio" id="kg" name="unit" value="kg">
+                    <input type="radio" id="unit" name="unit" value="kg">
                     <label for="kg">kg</label>
-                    <input type="radio" id="lbs" name="unit" value="lbs">
+                    <input type="radio" id="unit" name="unit" value="lbs">
                     <label for="lbs">lbs</label><br>
                 </div>
                 <button type="submit" id="submit">SUBMIT</button>
@@ -83,7 +83,7 @@
             var reps = document.getElementById('reps').value;
             var weight = document.getElementById('weight').value;
             var date = document.getElementById('date').value;
-            var units = document.getElementByName('unit').value;
+            var units = document.getElementById('unit').value;
             console.log(name, reps, weight, date, units)
             console.log('http://flip1.engr.oregonstate.edu:3636/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + units)
             req.open('GET', '/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + units, false);
