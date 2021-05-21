@@ -141,7 +141,7 @@
             var date = document.getElementById('date').value;
             var unit = document.getElementById('unit').value;
 
-
+            console.log("Insert!")
             req.open('GET', '/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + unit, true);
             req.addEventListener('load', function () {
                 if (req.status >= 200 && req.status < 400) {
