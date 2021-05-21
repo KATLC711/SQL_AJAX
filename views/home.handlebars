@@ -84,7 +84,7 @@
             var units = document.getElementById('units').value;
 
             //console.log('http://api.openweathermap.org/data/2.5/weather?q=' + city + ',' + country + '&appid=' + apiKey)
-            req.open('GET', '/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + units, true);
+            req.open('GET', 'insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + units, true);
             req.addEventListener('load', function () {
                 if (req.status >= 200 && req.status < 400) {
                     var response = JSON.parse(req.responseText);
