@@ -290,12 +290,15 @@
 
                     if (edit_reps != -1) {
                         document.getElementById("edit-reps").defaultValue = edit_reps
+                    } else {
+                        document.getElementById("edit-reps").defaultValue = ""
                     }
 
                     if (edit_weight != -1) {
                         document.getElementById("edit_weight").defaultValue = edit_weight
+                    } else {
+                        document.getElementById("edit-reps").defaultValue = ""
                     }
-
 
 
                     document.getElementById("edit-date").defaultValue = getFormattedDateYMR(edit_date)
