@@ -251,9 +251,7 @@
                 let edit_unit = rows[i].unit
 
 
-                if (edit_reps == -1) {
-                    let edit_reps = ""
-                }
+
 
 
 
@@ -267,7 +265,7 @@
                     document.getElementById("edit-form").style.display = "block";
                     document.getElementById("edit-id").value = edit_id
                     document.getElementById("edit-name").defaultValue = edit_name
-                    document.getElementById("edit-reps").defaultValue = edit_reps
+                    document.getElementById("edit-reps").defaultValue = ""
                     document.getElementById("edit-weight").defaultValue = edit_weight
                     document.getElementById("edit-date").defaultValue = getFormattedDateYMR(edit_date)
                     if (edit_unit == "kg") {
