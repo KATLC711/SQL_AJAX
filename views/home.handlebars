@@ -150,6 +150,7 @@
                 var TBodyContent = document.createElement("td")
                 var delete_btn = document.createElement('button');
                 var record_id = rows[i].id
+                console.log(record_id)
                 delete_btn.innerHTML = 'Delete';
                 delete_btn.onclick = function (record_id) {
 
@@ -158,7 +159,6 @@
                     req.open('GET', '/delete?id=' + record_id, true);
                     req.addEventListener('load', function () {
                         if (req.status >= 200 && req.status < 400) {
-                            console.log("hello")
                             var response = JSON.parse(req.responseText);
                             var response2 = JSON.parse(response.results);
                             DOMtable(response2);
