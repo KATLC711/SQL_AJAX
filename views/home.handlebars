@@ -53,52 +53,23 @@
             </thead>
             <tbody>
 
-                {{#each results}}
-                <tr>
-                    <td>{{this.name}}</td>
-                    <td>{{this.reps}}</td>
-                    <td>{{this.weight}}</td>
-                    <td>{{this.date}}</td>
-                    <td>{{this.unit}}</td>
-                    <td><button onclick="location.href = '/delete?id={{this.id}}'">Delete</button></td>
-                    <td><button
-                            onclick="location.href = '/edit-form?id={{this.id}}&name={{this.name}}&reps={{this.reps}}&weight={{this.weight}}&date={{this.date}}&unit={{this.unit}}'">Edit</button>
 
-                    </td>
-                </tr>
-                {{/each}}
+
+
             </tbody>
 
         </table>
     </div>
 
+
+    <div id="Trial">
+
+    </div>
+
     <script>
 
-        document.getElementById('submit').addEventListener('click', function (event) {
-            var req = new XMLHttpRequest();
-            var name = document.getElementById('name').value;
-            var reps = document.getElementById('reps').value;
-            var weight = document.getElementById('weight').value;
-            var date = document.getElementById('date').value;
-            var unit = document.getElementById('unit').value;
+        console.log("Hello")
 
-            console.log(name, reps, weight, date, unit)
-            req.open('GET', '/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + unit, true);
-            req.addEventListener('load', function () {
-                if (req.status >= 200 && req.status < 400) {
-                    console.log('Success!')
-
-
-                } else {
-                    console.log("Error in network request: " + req.statusText);
-                }
-            });
-            req.send(null);
-            event.preventDefault();
-
-        });
-
-        console.log(results)
 
 
     </script>

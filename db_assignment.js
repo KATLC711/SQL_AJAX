@@ -24,24 +24,11 @@ app.get('/', function (req, res, next) {
     for (i = 0; i < rows.length; i++) {
       query_result.push({ 'id': rows[i].id, 'name': rows[i].name, 'reps': rows[i].reps, 'weight': rows[i].weight, 'date': getFormattedDate(rows[i].date), 'unit': rows[i].unit })
     }
-    context.results = query_result;
-    res.render('home', context);
+    context.results = JSON.stringify(rows);
+    res.send(context);
   });
 });
 
-
-
-
-//insert?name=kevin&reps=10&weight=20&date=2019-01-01&unit=kg
-app.get('/insert', function (req, res, next) {
-  mysql.pool.query("INSERT INTO exercise (`name`,`reps`,`weight`,`date`,`unit`) VALUES (?,?,?,?,?)", [req.query.name, req.query.reps, req.query.weight, req.query.date, req.query.unit], function (err, result) {
-    if (err) {
-      next(err);
-      return;
-    }
-
-  });
-});
 
 
 
