@@ -57,7 +57,7 @@ app.get('/insert', function (req, res, next) {
       next(err, result);
       return;
     }
-    console.log(result.InsertedId)
+    console.log(result.insertId)
 
   });
 });
