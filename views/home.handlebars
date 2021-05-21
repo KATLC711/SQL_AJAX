@@ -14,7 +14,7 @@
 
     <div class="content-table">
         <h1>Insert New Record</h1>
-        <form>
+        <form id="insert-form">
             <label>Name</label><br>
             <input type="text" name="name" id="name" required><br>
             <label>Reps</label><br>
@@ -87,11 +87,7 @@
                     var response = JSON.parse(req.responseText);
                     var response2 = JSON.parse(response.results);
                     DOMtable(response2);
-                    document.getElementById('name').value = "";
-                    document.getElementById('reps').value = "";
-                    document.getElementById('weight').value = "";
-                    document.getElementById('date').value = "";
-                    document.getElementById('unit').value = "";
+                    document.getElementById("insert-form").reset();
 
                 } else {
                     console.log("Error in network request: " + req.statusText);
