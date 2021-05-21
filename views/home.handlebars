@@ -216,7 +216,7 @@
                     document.getElementById("edit_name").defaultValue = edit_name
                     document.getElementById("edit_reps").defaultValue = edit_reps
                     document.getElementById("edit_weight").defaultValue = edit_weight
-                    document.getElementById("edit_date").defaultValue = edit_date
+                    document.getElementById("edit_date").defaultValue = getFormattedDateYMR(edit_date)
                     document.getElementById("edit_unit").defaultValue = edit_unit
 
                 }
@@ -240,6 +240,26 @@
 
         function closeEditForm() {
             document.getElementById("edit-form").style.display = "none";
+        }
+
+
+
+
+        function getFormattedDateYMR(date_unformmated) {
+
+            var date = new Date(date_unformmated)
+
+            var year = date.getFullYear();
+
+            var month = (1 + date.getMonth()).toString();
+            month = month.length > 1 ? month : '0' + month;
+
+            var day = date.getDate().toString();
+            day = day.length > 1 ? day : '0' + day;
+
+            final = year + '-' + month + '-' + day;
+
+            return final.toString();
         }
 
 
