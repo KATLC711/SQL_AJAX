@@ -171,7 +171,7 @@
                 //console.log(name, reps, weight, date, unit)
                 console.log("Insert!")
 
-                req.open('GET', '/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + unit, true);
+                //req.open('GET', '/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + unit, true);
                 req.addEventListener('load', function () {
                     if (req.status >= 200 && req.status < 400) {
                         console.log("Success!")
