@@ -233,8 +233,15 @@
 
 
                 var TBodyContent = document.createElement("td")
-                TBodyContent.textContent = rows[i].unit
+
+                if (rows[i].unit == "na" {
+                    TBodyContent.textContent = ""
+                } else {
+                    TBodyContent.textContent = rows[i].unit
+                }
                 TBodyRow.appendChild(TBodyContent)
+
+
 
                 var TBodyContent = document.createElement("td")
                 var delete_btn = document.createElement('button');
