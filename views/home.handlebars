@@ -66,12 +66,23 @@
 
     </div>
 
+
     <script>
 
 
-        var response = JSON.parse(req.responseText);
-        console.log(response)
-
+        function (event) {
+            req.open('GET', '/', true);
+            req.addEventListener('load', function () {
+                if (req.status >= 200 && req.status < 400) {
+                    var response = JSON.parse(req.results);
+                    console.log(response)
+                } else {
+                    console.log("Error in network request: " + req.statusText);
+                }
+            });
+            req.send(null);
+            event.preventDefault();
+        };
 
 
     </script>
