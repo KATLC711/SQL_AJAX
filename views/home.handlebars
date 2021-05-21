@@ -154,6 +154,7 @@
                 delete_btn.onclick = function (record_id) {
 
                     var req = new XMLHttpRequest();
+                    console.log('/delete?id=' + record_id)
                     req.open('GET', '/delete?id=' + record_id, true);
                     req.addEventListener('load', function () {
                         if (req.status >= 200 && req.status < 400) {
