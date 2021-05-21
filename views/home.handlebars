@@ -64,7 +64,7 @@
     <br>
 
     <div id="edit-form" class="edit-form">
-        <h1 c>Edit Form</h1>
+        <h1>Edit Form</h1>
         <form>
             <input type="hidden" name="id" required><br>
             <label>Name</label><br>
@@ -204,7 +204,7 @@
                 var TBodyContent = document.createElement("td")
                 var edit_btn = document.createElement('button');
                 edit_btn.innerHTML = 'Edit';
-                edit_btn.onclick = openEditForm()
+                edit_btn.onclick = "openEditForm()"
                 TBodyContent.appendChild(edit_btn)
                 TBodyRow.appendChild(TBodyContent)
 
