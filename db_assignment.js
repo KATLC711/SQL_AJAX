@@ -32,13 +32,13 @@ app.get('/', function (req, res, next) {
 //insert?name=kevin&reps=10&weight=20&date=2019-01-01&unit=kg
 app.get('/insert', function (req, res, next) {
   var context = {};
-  console.log(req.query.name, req.query.reps, req.query.weight, req.query.date)
   mysql.pool.query("INSERT INTO exercise (`name`,`reps`,`weight`,`date`,`unit`) VALUES (?,?,?,?,?)", [req.query.name, req.query.reps, req.query.weight, req.query.date, "kg"], function (err, result) {
     if (err) {
       next(err);
       return;
     }
     context.status_msg = "Inserted id " + result.insertId;
+    console.log("Hello")
     res.redirect('/');
   });
 });
