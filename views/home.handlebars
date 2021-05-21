@@ -180,15 +180,11 @@
             var TBodyTag = document.getElementById('content-table')
             TBodyTag.innerHTML = '';
 
-            for (i = 0; i <= rows.length; i++) {
+            for (i = 0; i < rows.length; i++) {
                 var TBodyRow = document.createElement("tr")
 
-                var JSON_Object = rows[i]
-                console.log(JSON_Object.hasOwnProperty('name'))
-
                 var TBodyContent = document.createElement("td")
-                var DOM_name = rows[i].name
-                TBodyContent.textContent = DOM_name
+                TBodyContent.textContent = rows[i].name
                 TBodyRow.appendChild(TBodyContent)
 
                 var TBodyContent = document.createElement("td")
