@@ -219,9 +219,18 @@
                 }
                 TBodyRow.appendChild(TBodyContent)
 
+
+
+
                 var TBodyContent = document.createElement("td")
-                TBodyContent.textContent = getFormattedDate(rows[i].date)
+                if (rows[i].date == "9999-12-31") {
+                    TBodyContent.textContent = ""
+                } else {
+                    TBodyContent.textContent = rows[i].date
+                }
                 TBodyRow.appendChild(TBodyContent)
+
+
 
                 var TBodyContent = document.createElement("td")
                 TBodyContent.textContent = rows[i].unit
