@@ -82,8 +82,8 @@
                 <option value="lbs">
             </datalist>
             </input><br>
-            <button type="edit_submit">SUBMIT</button>
-            <button type="button" onclick="closeEditForm()">Close</button>
+            <button type="submit">SUBMIT</button>
+            <button type="button" onclick="closeForm()">Close</button>
         </form>
 
 
@@ -203,30 +203,27 @@
 
                 var TBodyContent = document.createElement("td")
                 var edit_btn = document.createElement('button');
-                let record_id = rows[i].id
                 edit_btn.innerHTML = 'Edit';
                 edit_btn.onclick = openEditForm()
-
-            };
-            TBodyContent.appendChild(edit_btn)
-            TBodyRow.appendChild(TBodyContent)
+                TBodyContent.appendChild(edit_btn)
+                TBodyRow.appendChild(TBodyContent)
 
 
 
 
-            TBodyTag.appendChild(TBodyRow)
+                TBodyTag.appendChild(TBodyRow)
 
-        }
+            }
 
         }
 
 
         function openEditForm() {
-            document.getElementById("myForm").style.display = "block";
+            document.getElementById("edit-form").style.display = "block";
         }
 
         function closeEditForm() {
-            document.getElementById("myForm").style.display = "none";
+            document.getElementById("edit-form").style.display = "none";
         }
 
 
