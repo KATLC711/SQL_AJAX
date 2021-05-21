@@ -11,14 +11,23 @@ app.set('view engine', 'handlebars');
 app.set('port', 3636);
 
 
+
 app.get('/', function (req, res, next) {
   var context = {};
-  var x = selectstmt()
-  console.log(x)
-
-  //res.render('home', context);
+  mysql.pool.query('SELECT * FROM exercise', function (err, rows, fields) {
+    if (err) {
+      next(err);
+      return;
+    }
+    console.log(rows)
+    query_result = []
+    for (i = 0; i < rows.length; i++) {
+      query_result.push({ 'id': rows[i].id, 'name': rows[i].name, 'reps': rows[i].reps, 'weight': rows[i].weight, 'date': getFormattedDate(rows[i].date), 'unit': rows[i].unit })
+    }
+    context.results = query_result;
+    res.render('home', context);
+  });
 });
-
 
 //insert?name=kevin&reps=10&weight=20&date=2019-01-01&unit=kg
 app.get('/insert', function (req, res, next) {
@@ -54,23 +63,6 @@ app.listen(app.get('port'), function () {
   console.log('Express started on http://localhost:' + app.get('port') + '; press Ctrl-C to terminate.');
 });
 
-
-
-function selectstmt() {
-
-  mysql.pool.query('SELECT * FROM exercise', function (err, rows, fields) {
-    if (err) {
-      next(err);
-      return;
-    }
-    var query_result = []
-    for (i = 0; i < rows.length; i++) {
-      query_result.push({ 'id': rows[i].id, 'name': rows[i].name, 'reps': rows[i].reps, 'weight': rows[i].weight, 'date': getFormattedDate(rows[i].date), 'unit': rows[i].unit })
-    }
-    //console.log(query_result)
-    return query_result;
-  });
-}
 
 
 
