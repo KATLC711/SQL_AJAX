@@ -24,7 +24,7 @@
             <label>Date</label><br>
             <input type="date" name="date" id="date"><br>
             <label>Unit</label><br>
-            <input type="radio" id="kg" name="unit" value="kg">kg<br>
+            <input type="radio" id="kg" name="unit" value="kg">kg
             <input type="radio" id="lbs" name="unit" value="lbs">lbs<br>
             <button type="submit" id="submit">SUBMIT</button>
         </form>
@@ -72,12 +72,11 @@
             <label>Date</label><br>
             <input type="date" name="date" id="edit-date"><br>
             <label>Unit</label><br>
-            <input list="unit" name="unit" id="edit-unit">
-            <datalist>
-                <option value="kg">
-                <option value="lbs">
-            </datalist>
-            </input><br>
+
+            <input type="radio" id="kg" name="edit-unit" value="kg">kg
+            <input type="radio" id="lbs" name="edit-unit" value="lbs">lbs<br>
+
+
             <button type="submit" id='edit-submit'>SUBMIT</button>
             <button type="button" onclick="closeEditForm()">Close</button>
         </form>
@@ -102,7 +101,7 @@
             var reps = document.getElementById('edit-reps').value;
             var weight = document.getElementById('edit-weight').value;
             var date = document.getElementById('edit-date').value;
-            var unit = document.getElementById('edit-unit').value;
+            var unit = document.querySelector('input[name = "edit-unit"]:checked').value;
 
 
 
