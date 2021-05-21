@@ -1,0 +1,17 @@
+
+body {
+    background-color:#84b1f5;
+    text-align: center;
+}
+
+.content-table {
+margin:auto;
+border-style: solid;
+padding:25px;
+}
+
+
+table, th, td {
+    text-align: center;
+    border: 1px solid black;
+}
