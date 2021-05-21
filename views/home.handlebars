@@ -69,8 +69,32 @@
 
 
 
-
         PullData();
+
+        document.getElementById('submit').addEventListener('click', function (event) {
+            var req = new XMLHttpRequest();
+            var name = document.getElementById('name').value;
+            var reps = document.getElementById('reps').value;
+            var weight = document.getElementById('weight').value;
+            var date = document.getElementById('date').value;
+            var unit = document.getElementById('unit').value;
+
+
+            req.open('GET', '/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + unit, true);
+            req.addEventListener('load', function () {
+                if (req.status >= 200 && req.status < 400) {
+                    console.log("Success!")
+                } else {
+                    console.log("Error in network request: " + req.statusText);
+                }
+            });
+            req.send(null);
+            event.preventDefault();
+        });
+
+
+
+
 
         function PullData() {
             var req = new XMLHttpRequest();
