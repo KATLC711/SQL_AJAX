@@ -64,7 +64,7 @@
     <br>
 
     <div id="edit-form" class="edit-form">
-        <h1>Edit FOrm</h1>
+        <h1>Edit Form</h1>
         <form>
             <input type="hidden" name="id" required><br>
             <label>Name</label><br>
@@ -180,33 +180,6 @@
                 let record_id = rows[i].id
                 delete_btn.innerHTML = 'Delete';
                 delete_btn.onclick = function () {
-
-                    var req = new XMLHttpRequest();
-                    req.open('GET', '/delete?id=' + record_id, true);
-                    req.addEventListener('load', function () {
-                        if (req.status >= 200 && req.status < 400) {
-                            var response = JSON.parse(req.responseText);
-                            var response2 = JSON.parse(response.results);
-                            DOMtable(response2);
-                            return;
-                        } else {
-                            console.log("Error in network request: " + req.statusText);
-                        }
-                    });
-                    req.send(null);
-                    event.preventDefault();
-                };
-                TBodyContent.appendChild(delete_btn)
-                TBodyRow.appendChild(TBodyContent)
-
-
-
-
-                var TBodyContent = document.createElement("td")
-                var edit_btn = document.createElement('button');
-                let record_id = rows[i].id
-                edit_btn.innerHTML = 'Edit';
-                edit_btn.onclick = function () {
 
                     var req = new XMLHttpRequest();
                     req.open('GET', '/delete?id=' + record_id, true);
