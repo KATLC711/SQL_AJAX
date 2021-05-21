@@ -54,11 +54,12 @@ app.get('/pull', function (req, res, next) {
 app.get('/insert', function (req, res, next) {
   var context = {};
   mysql.pool.query("INSERT INTO exercise (`name`,`reps`,`weight`,`date`,`unit`) VALUES (?,?,?,?,?)", [req.query.name, req.query.reps, req.query.weight, req.query.date, req.query.unit], function (err, result) {
-    if (err) {
+    if (err, result) {
       next(err);
       return;
     }
-    res.send(context);
+    console.log(result)
+
   });
 });
 
