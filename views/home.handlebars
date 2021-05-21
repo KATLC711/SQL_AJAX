@@ -251,16 +251,6 @@
                 let edit_unit = rows[i].unit
 
 
-                if (edit_reps == -1) {
-                    edit_reps = ""
-                }
-                if (edit_weight == -1) {
-                    edit_weight = 
-                }
-                if (edit_date == "9999-12-31") {
-                    edit_date = ""
-                }
-
 
 
 
@@ -275,6 +265,8 @@
                     document.getElementById("edit-date").defaultValue = getFormattedDateYMR(edit_date)
                     if (edit_unit == "kg") {
                         document.getElementById("edit-kg").checked = true
+                    } else if (edit_unit == "lbs") {
+                        document.getElementById("edit-lbs").checked = true
                     } else {
                         document.getElementById("edit-na").checked = true
                     }
