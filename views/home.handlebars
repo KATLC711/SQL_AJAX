@@ -291,10 +291,15 @@
                         document.getElementById("edit-reps").defaultValue = edit_reps
                     }
 
+                    if (edit_weight != -1) {
+                        document.getElementById("edit-reps").defaultValue = edit_weight
+                    }
 
 
-                    document.getElementById("edit-weight").defaultValue = edit_weight
-                    document.getElementById("edit-date").defaultValue = getFormattedDateYMR(edit_date)
+                    if (getFormattedDateYMR(rows[i].date) != "9999-12-31") {
+                        document.getElementById("edit-date").defaultValue = getFormattedDateYMR(edit_date)
+                    }
+
                     if (edit_unit == "kg") {
                         document.getElementById("edit-kg").checked = true
                     } else if (edit_unit == "lbs") {
