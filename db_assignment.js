@@ -13,7 +13,7 @@ app.set('port', 3636);
 
 app.get('/', function (req, res, next) {
   var context = {};
-  console(selectstmt())
+  console.log(selectstmt())
 
   //res.render('home', context);
 });
