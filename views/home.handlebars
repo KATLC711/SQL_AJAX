@@ -108,35 +108,35 @@
                 var date = document.getElementById('edit-date').value;
                 var unit = document.querySelector('input[name = "edit-unit"]:checked').value;
 
-
-                console.log(name, reps, weight, date, unit)
-                if (reps == "") {
-                    reps = -1
-                }
-                if (weight == "") {
-                    weight = -1
-                }
-                if (date == "") {
-                    date = "9999-12-31"
-                }
-
-                req.open('GET', '/edit?id=' + id + '&name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + unit, true);
-                req.addEventListener('load', function () {
-                    if (req.status >= 200 && req.status < 400) {
-                        console.log("Success!")
-                        closeEditForm();
-                        var response = JSON.parse(req.responseText);
-                        var response2 = JSON.parse(response.results);
-                        DOMtable(response2);
-
-
-                    } else {
-                        console.log("Error in network request: " + req.statusText);
-                    }
-                });
-                req.send(null);
-                event.preventDefault();
-
+                /*
+                                console.log(name, reps, weight, date, unit)
+                                if (reps == "") {
+                                    reps = -1
+                                }
+                                if (weight == "") {
+                                    weight = -1
+                                }
+                                if (date == "") {
+                                    date = "9999-12-31"
+                                }
+                
+                                req.open('GET', '/edit?id=' + id + '&name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + unit, true);
+                                req.addEventListener('load', function () {
+                                    if (req.status >= 200 && req.status < 400) {
+                                        console.log("Success!")
+                                        closeEditForm();
+                                        var response = JSON.parse(req.responseText);
+                                        var response2 = JSON.parse(response.results);
+                                        DOMtable(response2);
+                
+                
+                                    } else {
+                                        console.log("Error in network request: " + req.statusText);
+                                    }
+                                });
+                                req.send(null);
+                                event.preventDefault();
+                */
             }
 
         });
