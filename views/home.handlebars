@@ -31,7 +31,7 @@
                     <input type="radio" id="lbs" name="unit" value="lbs">
                     <label for="lbs">lbs</label><br>
                 </div>
-                <button type="submit">SUBMIT</button>
+                <button type="submit" id="submit">SUBMIT</button>
             </fieldset>
         </form>
     </div>
@@ -86,7 +86,7 @@
             var units = document.getElementById('units').value;
             console.log(name)
             console.log('http://flip1.engr.oregonstate.edu:3636/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + units)
-            req.open('GET', 'http://flip1.engr.oregonstate.edu:3636/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + units, false);
+            req.open('GET', 'http://flip1.engr.oregonstate.edu:3636/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + units, true);
             req.addEventListener('load', function () {
                 if (req.status >= 200 && req.status < 400) {
                     var response = JSON.parse(req.responseText);
