@@ -177,6 +177,29 @@
                 };
                 TBodyContent.appendChild(delete_btn)
                 TBodyRow.appendChild(TBodyContent)
+
+
+                var TBodyContent = document.createElement("td")
+                var edit_btn = document.createElement('button');
+                let record_id = rows[i].id
+                edit_btn.innerHTML = 'Edit';
+                edit_btn.onclick = EditForm()
+
+
+                TBodyContent.appendChild(edit_btn)
+                TBodyRow.appendChild(TBodyContent)
+
+
+
+
+
+
+
+
+
+
+
+
                 TBodyTag.appendChild(TBodyRow)
 
             }
@@ -184,7 +207,7 @@
         }
 
 
-        EditForm()
+
 
         function EditForm() {
 
