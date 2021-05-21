@@ -169,7 +169,7 @@
                 TBodyRow.appendChild(TBodyContent)
 
                 var TBodyContent = document.createElement("td")
-                TBodyContent.textContent = rows[i].date
+                TBodyContent.textContent = getFormattedDate(rows[i].date)
                 TBodyRow.appendChild(TBodyContent)
 
                 var TBodyContent = document.createElement("td")
@@ -262,6 +262,25 @@
 
             return final.toString();
         }
+
+
+        function getFormattedDate(date_unformmated) {
+
+            var date = new Date(date_unformmated)
+
+            var year = date.getFullYear();
+
+            var month = (1 + date.getMonth()).toString();
+            month = month.length > 1 ? month : '0' + month;
+
+            var day = date.getDate().toString();
+            day = day.length > 1 ? day : '0' + day;
+
+            final = month + '-' + day + '-' + year;
+
+            return final.toString();
+        }
+
 
 
     </script>
