@@ -147,6 +147,11 @@
                 TBodyContent.textContent = rows[i].unit
                 TBodyRow.appendChild(TBodyContent)
 
+                var TBodyContent = document.createElement("td")
+                TBodyContent.innerHTML = "<button onclick="location.href = '/delete?id=3'">Delete</button>"
+                TBodyRow.appendChild(TBodyContent)
+
+
                 TBodyTag.appendChild(TBodyRow)
 
             }
