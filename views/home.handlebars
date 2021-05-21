@@ -127,7 +127,6 @@
 
 
         document.getElementById('submit').addEventListener('click', function (event) {
-            var name = "";
             var req = new XMLHttpRequest();
             var name = document.getElementById('name').value;
             var reps = document.getElementById('reps').value;
@@ -186,7 +185,8 @@
 
 
                 var TBodyContent = document.createElement("td")
-                TBodyContent.textContent = rows[i].name
+                var DOM_name = rows[i].name
+                TBodyContent.textContent = DOM_name
                 TBodyRow.appendChild(TBodyContent)
 
                 var TBodyContent = document.createElement("td")
@@ -238,7 +238,6 @@
                 let edit_weight = rows[i].weight
                 let edit_date = rows[i].date
                 let edit_unit = rows[i].unit
-                console.log(edit_unit)
                 edit_btn.innerHTML = 'Edit';
                 edit_btn.onclick = function () {
 
