@@ -51,7 +51,7 @@
                     <th>Edit</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="content-table">
 
 
 
@@ -62,9 +62,6 @@
     </div>
 
 
-    <div id="Trial">
-
-    </div>
 
 
     <script>
@@ -97,7 +94,24 @@
             console.log(rows[0].id)
             console.log(rows[0].name)
             console.log(rows[0].reps)
-            document.getElementById('Trial').textContent = rows[0]
+
+
+            var TBodyTag = document.getElementById('content-table')
+            for (i = 1; i <= rows.length; i++) {
+                var TBodyRow = document.createElement("tr")
+                for (j = 1; j <= rows[i].length; j++) {
+                    var TBodyContent = document.createElement("td")
+                    TBodyContent.textContent = rows[i][j]
+                    TBodyRow.appendChild(TBodyContent)
+                }
+                TBodyTag.appendChild(TBodyRow)
+            }
+
+
+
+
+
+
         }
 
     </script>
