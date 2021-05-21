@@ -147,7 +147,7 @@
             var name = document.getElementById('name').value;
 
             if (name === "") {
-                alert("Please enter your Name in the form");
+                alert("Please enter the Name in the form");
                 return
             } else {
                 var req = new XMLHttpRequest();
@@ -170,6 +170,7 @@
 
                 //console.log(name, reps, weight, date, unit)
                 console.log("Insert!")
+                /*
                 req.open('GET', '/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + unit, true);
                 req.addEventListener('load', function () {
                     if (req.status >= 200 && req.status < 400) {
@@ -186,6 +187,7 @@
                 });
                 req.send(null);
                 event.preventDefault();
+                */
             }
         });
 
