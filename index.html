@@ -1,0 +1,92 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .GET {
+            border: 5px outset #2a6592;
+            height: 300px;
+        }
+
+        .POST {
+            border: 5px outset #2a6592;
+            height: 300px;
+        }
+    </style>
+    <title>Activity 5 - AJAX Interaction</title>
+</head>
+
+<body>
+    <h1>Activity 5 - AJAX Interaction</h1>
+    <h2>by Kevin Cheung</h2>
+
+    <div class="GET">
+        <h2>GET - Request</h2>
+
+
+        <form>
+            <fieldset>
+                <legend>Weather by City</legend>
+                <label for="city"></label>
+                <input type="text" name="city" id="city" placeholder="City">
+                <label for="country"></label>
+                <input type="text" name="country" id="country" placeholder="Country">
+                <input type="submit" id="citysubmit">
+            </fieldset>
+        </form>
+
+        <form>
+            <fieldset>
+                <legend>Weather by ZIP</legend>
+                <label for="zip"></label>
+                <input type="text" name="zip" id="zip" placeholder="Zipcode">
+                <label for="country2"></label>
+                <input type="text" name="country2" id="country2" placeholder="Country">
+                <input type="submit" id="zipsubmit">
+            </fieldset>
+        </form>
+
+        <div>
+            <h2>Result</h2>
+            <ul>
+                <li><span>Status: </span><span id="status"></span></li>
+                <li><span>Description: </span><span id="weatherdescription"></span></li>
+                <li><span>Tempature: </span><span id="tempature"></span></li>
+                <li><span>Feels like: </span><span id="feellike"></span></li>
+            </ul>
+        </div>
+
+
+
+
+    </div>
+
+    <br>
+
+    <div class="POST">
+        <h2>POST - Request</h2>
+
+        <form>
+            <fieldset>
+                <legend>Random Data</legend>
+                <label for="data"></label>
+                <input type="text" name="data" id="data">
+                <input type="submit" id="datasubmit">
+            </fieldset>
+        </form>
+        <div>
+            <h2>Result</h2>
+            <ul>
+                <li><span>Received Data: </span><span id="received_data"></span></li>
+
+            </ul>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
