@@ -145,7 +145,6 @@
         document.getElementById('submit').addEventListener('click', function (event) {
 
             var name = document.getElementById('name').value;
-            console.log("Hello")
             if (name != "") {
                 var req = new XMLHttpRequest();
                 var reps = document.getElementById('reps').value;
@@ -190,6 +189,7 @@
 
 
         function PullData() {
+            console.log("Hello")
             var req = new XMLHttpRequest();
             req.open('GET', '/pull', true);
             req.addEventListener('load', function () {
