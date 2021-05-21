@@ -83,6 +83,7 @@
             </datalist>
             </input><br>
             <button type="edit_submit">SUBMIT</button>
+            <button type="button" onclick="closeEditForm()">Close</button>
         </form>
 
 
@@ -200,19 +201,33 @@
                 TBodyRow.appendChild(TBodyContent)
 
 
+                var TBodyContent = document.createElement("td")
+                var edit_btn = document.createElement('button');
+                let record_id = rows[i].id
+                edit_btn.innerHTML = 'Edit';
+                edit_btn.onclick = openEditForm()
+
+            };
+            TBodyContent.appendChild(edit_btn)
+            TBodyRow.appendChild(TBodyContent)
 
 
 
 
+            TBodyTag.appendChild(TBodyRow)
 
-                TBodyTag.appendChild(TBodyRow)
-
-            }
+        }
 
         }
 
 
+        function openEditForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
 
+        function closeEditForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
 
 
     </script>
