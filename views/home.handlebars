@@ -81,7 +81,9 @@
             req.open('GET', '/pull', true);
             req.addEventListener('load', function () {
                 if (req.status >= 200 && req.status < 400) {
-                    console.log("Succcess")
+
+                    var response = JSON.parse(req.responseText);
+                    console.log(response)
                 } else {
                     console.log("Error in network request: " + req.statusText);
                 }
