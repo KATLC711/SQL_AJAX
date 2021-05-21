@@ -281,6 +281,7 @@
 
                 edit_btn.innerHTML = 'Edit';
                 edit_btn.onclick = function () {
+                    closeEditForm()
 
                     document.getElementById("edit-form").style.display = "block";
                     document.getElementById("edit-id").value = edit_id
