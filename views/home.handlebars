@@ -212,6 +212,7 @@
                 edit_btn.innerHTML = 'Edit';
                 edit_btn.onclick = function () {
                     document.getElementById("edit-form").style.display = "block";
+                    document.getElementById("edit-name").textContent = edit_name
                 }
 
 
@@ -229,9 +230,7 @@
         }
 
 
-        function openEditForm() {
-            document.getElementById("edit-form").style.display = "block";
-        }
+
 
         function closeEditForm() {
             document.getElementById("edit-form").style.display = "none";
