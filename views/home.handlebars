@@ -66,23 +66,23 @@
     <div id="edit-form" class="edit-form">
         <h1>Edit Form</h1>
         <form>
-            <input type="hidden" name="edit_id" id="edit_id" required><br>
+            <input type="hidden" name="edit_id" id="edit-id" required><br>
             <label>Name</label><br>
-            <input type="text" name="name" id="edit_name" required><br>
+            <input type="text" name="name" id="edit-name" required><br>
             <label>Reps</label><br>
-            <input type="number" name="reps" id="edit_reps"><br>
+            <input type="number" name="reps" id="edit-reps"><br>
             <label>Weight</label><br>
-            <input type="number" name="weight" id="edit_weight"><br>
+            <input type="number" name="weight" id="edit-weight"><br>
             <label>Date</label><br>
-            <input type="date" name="date" id="edit_date"><br>
+            <input type="date" name="date" id="edit-date"><br>
             <label>Unit</label><br>
-            <input list="unit" name="unit" id="edit_unit">
+            <input list="unit" name="unit" id="edit-unit">
             <datalist>
                 <option value="kg">
                 <option value="lbs">
             </datalist>
             </input><br>
-            <button type="submit">SUBMIT</button>
+            <button type="submit" id='edit-submit'>SUBMIT</button>
             <button type="button" onclick="closeEditForm()">Close</button>
         </form>
 
@@ -213,12 +213,12 @@
                 edit_btn.onclick = function () {
                     console.log(edit_id)
                     document.getElementById("edit-form").style.display = "block";
-                    document.getElementById("edit_id").value = edit_id
-                    document.getElementById("edit_name").defaultValue = edit_name
-                    document.getElementById("edit_reps").defaultValue = edit_reps
-                    document.getElementById("edit_weight").defaultValue = edit_weight
-                    document.getElementById("edit_date").defaultValue = getFormattedDateYMR(edit_date)
-                    document.getElementById("edit_unit").defaultValue = edit_unit
+                    document.getElementById("edit-id").value = edit_id
+                    document.getElementById("edit-name").defaultValue = edit_name
+                    document.getElementById("edit-reps").defaultValue = edit_reps
+                    document.getElementById("edit-weight").defaultValue = edit_weight
+                    document.getElementById("edit-date").defaultValue = getFormattedDateYMR(edit_date)
+                    document.getElementById("edit-unit").defaultValue = edit_unit
 
                 }
 
