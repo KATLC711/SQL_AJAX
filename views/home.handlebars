@@ -83,8 +83,8 @@
                 if (req.status >= 200 && req.status < 400) {
 
                     var response = JSON.parse(req.responseText);
-                    console.log(response.results)
-                    DOMtable(response);
+                    //console.log(response.results)
+                    DOMtable(response.results);
                 } else {
                     console.log("Error in network request: " + req.statusText);
                 }
@@ -93,9 +93,9 @@
         };
 
 
-        function DOMtable(response) {
-            console.log(response.results[0])
-            document.getElementById('Trial').textContent = response[0]
+        function DOMtable(rows) {
+            console.log(rows)
+            document.getElementById('Trial').textContent = rows[0]
         }
 
     </script>
