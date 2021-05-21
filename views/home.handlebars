@@ -90,9 +90,9 @@
             req.open('GET', 'http://flip1.engr.oregonstate.edu:3636/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date, true);
             req.addEventListener('load', function () {
                 if (req.status >= 200 && req.status < 400) {
-                    var req1 = new XMLHttpRequest();
+
                     console.log("Success!")
-                    req1.open('GET', 'http://flip1.engr.oregonstate.edu:3636/, true);
+
                 } else {
                     console.log("Error in network request: " + req.statusText);
                 }
