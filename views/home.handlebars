@@ -48,6 +48,7 @@
                     <th>Date</th>
                     <th>Unit</th>
                     <th>Delete</th>
+                    <th>Edit</th>
                 </tr>
             </thead>
             <tbody id="content-table">
@@ -60,6 +61,10 @@
         </table>
     </div>
 
+
+    <div id="edit-form">
+
+    </div>
 
 
 
@@ -174,6 +179,34 @@
                 TBodyTag.appendChild(TBodyRow)
 
             }
+
+        }
+        EditForm()
+        function EditForm() {
+
+            var edit_form_div = document.getElementById("edit-form")
+            edit_form_div.innerHTML = '    <div class="content-table">\
+                < h1 > Insert New Record</h1 >\
+                    <form id="insert-form">\
+                        <label>Name</label><br>\
+                            <input type="text" name="name" id="name" required><br>\
+                < label > Reps</label > <br>\
+                    <input type="number" name="reps" id="reps"><br>\
+                        <label>Weight</label><br>\
+                            <input type="number" name="weight" id="weight"><br>\
+                                <label>Date</label><br>\
+                                    <input type="date" name="date" id="date"><br>\
+                                        <label>Unit</label><br>\
+                                            <input list="unit" name="unit" id="unit">\
+                                                <datalist>\
+                                                    <option value="kg">\
+                                                        <option value="lbs">\
+            </datalist>\
+            </input><br>\
+                                                        <button type="submit" id="submit">SUBMIT</button>\
+        </form>\
+    </div>'
+
 
         }
 
