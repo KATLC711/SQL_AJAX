@@ -137,6 +137,15 @@
             if (reps == "") {
                 reps = -1
             }
+            if (weight == "") {
+                weight = -1
+            }
+            if (date == "") {
+                date = "9999-12-31"
+            }
+            if (unit == "") {
+                unit = -1
+            }
 
             console.log("Insert!")
             req.open('GET', '/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + unit, true);
