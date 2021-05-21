@@ -24,12 +24,8 @@
             <label>Date</label><br>
             <input type="date" name="date" id="date"><br>
             <label>Unit</label><br>
-            <input list="unit" name="unit" id="unit">
-            <datalist>
-                <option value="kg">
-                <option value="lbs">
-            </datalist>
-            </input><br>
+            <input type="radio" id="kg" name="unit" value="kg">kg<br>
+            <input type="radio" id="lbs" name="unit" value="lbs">lbs<br>
             <button type="submit" id="submit">SUBMIT</button>
         </form>
     </div>
@@ -137,7 +133,8 @@
             var reps = document.getElementById('reps').value;
             var weight = document.getElementById('weight').value;
             var date = document.getElementById('date').value;
-            var unit = document.getElementById('unit').value;
+            var unit = document.querySelector('input[name = "unit"]:checked').value;
+
 
             console.log("Insert!")
             req.open('GET', '/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + unit, true);
