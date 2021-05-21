@@ -21,4 +21,5 @@ table, th, td {
 .edit-form {
     display: none;
     margin:auto;
+    border-style :solid;
 }
