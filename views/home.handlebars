@@ -71,36 +71,36 @@
 
         </table>
     </div>
-
-
-    <script>
-
-        document.getElementById('submit').addEventListener('click', function (event) {
-            var req = new XMLHttpRequest();
-            var name = document.getElementById('name').value;
-            var reps = document.getElementById('reps').value;
-            var weight = document.getElementById('weight').value;
-            var date = document.getElementById('date').value;
-            var units = document.getElementById('units').value;
-
-            console.log('http://flip1.engr.oregonstate.edu:3636/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + units)
-            req.open('GET', 'http://flip1.engr.oregonstate.edu:3636/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + units, true);
-            req.addEventListener('load', function () {
-                if (req.status >= 200 && req.status < 400) {
-                    var response = JSON.parse(req.responseText);
-                    console.log("Success!")
-
-                } else {
-                    console.log("Error in network request: " + req.statusText);
-                }
-            });
-            req.send(null);
-            event.preventDefault();
-        });
-
-
-    </script>
-
 </body>
+
+<script>
+
+    document.getElementById('submit').addEventListener('click', function (event) {
+        var req = new XMLHttpRequest();
+        var name = document.getElementById('name').value;
+        var reps = document.getElementById('reps').value;
+        var weight = document.getElementById('weight').value;
+        var date = document.getElementById('date').value;
+        var units = document.getElementById('units').value;
+
+        console.log('http://flip1.engr.oregonstate.edu:3636/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + units)
+        req.open('GET', 'http://flip1.engr.oregonstate.edu:3636/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + units, true);
+        req.addEventListener('load', function () {
+            if (req.status >= 200 && req.status < 400) {
+                var response = JSON.parse(req.responseText);
+                console.log("Success!")
+
+            } else {
+                console.log("Error in network request: " + req.statusText);
+            }
+        });
+        req.send(null);
+        event.preventDefault();
+    });
+
+
+</script>
+
+
 
 </html>
