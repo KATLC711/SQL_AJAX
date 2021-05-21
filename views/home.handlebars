@@ -91,10 +91,6 @@
 
         function DOMtable(rows) {
 
-            console.log(rows.length)
-            console.log(rows[0])
-
-
             var TBodyTag = document.getElementById('content-table')
             for (i = 1; i <= rows.length; i++) {
                 var TBodyRow = document.createElement("tr")
@@ -123,14 +119,9 @@
                 TBodyContent.textContent = rows[i].unit
                 TBodyRow.appendChild(TBodyContent)
 
-
                 TBodyTag.appendChild(TBodyRow)
+
             }
-
-
-
-
-
 
         }
 
