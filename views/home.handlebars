@@ -66,17 +66,17 @@
     <div id="edit-form" class="edit-form">
         <h1>Edit Form</h1>
         <form>
-            <input type="hidden" name="id" required><br>
+            <input type="hidden" name="edit_id" required><br>
             <label>Name</label><br>
-            <input type="text" name="name" id="name" required><br>
+            <input type="text" name="name" id="edit_name" required><br>
             <label>Reps</label><br>
-            <input type="number" name="reps" id="reps"><br>
+            <input type="number" name="reps" id="edit_reps"><br>
             <label>Weight</label><br>
-            <input type="number" name="weight" id="weight"><br>
+            <input type="number" name="weight" id="edit_weight"><br>
             <label>Date</label><br>
-            <input type="date" name="date" id="date"><br>
+            <input type="date" name="date" id="edit_date"><br>
             <label>Unit</label><br>
-            <input list="unit" name="unit" id="unit">
+            <input list="unit" name="unit" id="edit_unit">
             <datalist>
                 <option value="kg">
                 <option value="lbs">
@@ -203,6 +203,12 @@
 
                 var TBodyContent = document.createElement("td")
                 var edit_btn = document.createElement('button');
+                let edit_id = rows[i].id
+                let edit_name = rows[i].name
+                let edit_reps = rows[i].reps
+                let edit_weight = rows[i].weight
+                let edit_date = rows[i].date
+                let edit_unit = rows[i].unit
                 edit_btn.innerHTML = 'Edit';
                 edit_btn.onclick = function () {
                     document.getElementById("edit-form").style.display = "block";
