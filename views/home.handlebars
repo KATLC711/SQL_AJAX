@@ -223,7 +223,7 @@
 
 
                 var TBodyContent = document.createElement("td")
-                if (rows[i].date == "9999-12-31") {
+                if (getFormattedDateYMR(rows[i].date) == "9999-12-31") {
                     TBodyContent.textContent = ""
                 } else {
                     TBodyContent.textContent = rows[i].date
