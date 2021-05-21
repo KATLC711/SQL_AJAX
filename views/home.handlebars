@@ -83,7 +83,7 @@
             var date = document.getElementById('date').value;
             var units = document.getElementById('units').value;
 
-            //console.log('http://api.openweathermap.org/data/2.5/weather?q=' + city + ',' + country + '&appid=' + apiKey)
+            console.log('http://flip1.engr.oregonstate.edu:3636/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + units)
             req.open('GET', 'http://flip1.engr.oregonstate.edu:3636/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + units, true);
             req.addEventListener('load', function () {
                 if (req.status >= 200 && req.status < 400) {
