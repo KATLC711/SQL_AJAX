@@ -59,9 +59,21 @@ app.get('/insert', function (req, res, next) {
     }
     res.redirect("/pull")
 
-
   });
 });
+
+
+app.get('/delete', function (req, res, next) {
+  var context = {};
+  mysql.pool.query("DELETE FROM exercise WHERE id=?", [req.query.id], function (err, result) {
+    if (err) {
+      next(err);
+      return;
+    }
+    res.redirect("/pull");
+  });
+});
+
 
 
 
