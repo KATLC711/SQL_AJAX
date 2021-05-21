@@ -42,13 +42,12 @@
         <table>
             <thead>
                 <tr>
+                    <th>id</th>
                     <th>Name</th>
                     <th>Reps</th>
                     <th>Weight</th>
                     <th>Date</th>
                     <th>Unit</th>
-                    <th>Delete</th>
-                    <th>Edit</th>
                 </tr>
             </thead>
             <tbody id="content-table">
@@ -99,13 +98,34 @@
             var TBodyTag = document.getElementById('content-table')
             for (i = 1; i <= rows.length; i++) {
                 var TBodyRow = document.createElement("tr")
-                for (j = 1; j <= rows[i].length; j++) {
-                    var TBodyContent = document.createElement("td")
-                    TBodyContent.textContent = rows[i][j]
-                    TBodyRow.appendChild(TBodyContent)
-                }
-                TBodyTag.appendChild(TBodyRow)
+
+                var TBodyContent = document.createElement("td")
+                TBodyContent.textContent = rows[i].id
+                TBodyRow.appendChild(TBodyContent)
+
+                var TBodyContent = document.createElement("td")
+                TBodyContent.textContent = rows[i].name
+                TBodyRow.appendChild(TBodyContent)
+
+                var TBodyContent = document.createElement("td")
+                TBodyContent.textContent = rows[i].reps
+                TBodyRow.appendChild(TBodyContent)
+
+                var TBodyContent = document.createElement("td")
+                TBodyContent.textContent = rows[i].weight
+                TBodyRow.appendChild(TBodyContent)
+
+                var TBodyContent = document.createElement("td")
+                TBodyContent.textContent = rows[i].date
+                TBodyRow.appendChild(TBodyContent)
+
+                var TBodyContent = document.createElement("td")
+                TBodyContent.textContent = rows[i].unit
+                TBodyRow.appendChild(TBodyContent)
+
             }
+            TBodyTag.appendChild(TBodyRow)
+        }
 
 
 
