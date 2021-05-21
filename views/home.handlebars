@@ -84,7 +84,9 @@
             req.addEventListener('load', function () {
                 if (req.status >= 200 && req.status < 400) {
                     console.log("Success!")
-
+                    var response = JSON.parse(req.responseText);
+                    var response2 = JSON.parse(response.results);
+                    DOMtable(response2);
 
                 } else {
                     console.log("Error in network request: " + req.statusText);
