@@ -75,7 +75,8 @@
             <label>Unit</label><br>
 
             <input type="radio" id="edit-kg" name="edit-unit" value="kg">kg
-            <input type="radio" id="edit-lbs" name="edit-unit" value="lbs">lbs<br>
+            <input type="radio" id="edit-lbs" name="edit-unit" value="lbs">lbs
+            <input type="radio" style="display:none" id="edit-na" name="unit" value="na" checked><br>
 
 
             <button type="submit" id='edit-submit'>SUBMIT</button>
@@ -145,10 +146,8 @@
             if (date == "") {
                 date = "9999-12-31"
             }
-            if (unit == null) {
-                unit = -1
-            }
-            console.log(name, reps, weight, date, unit)
+
+            //console.log(name, reps, weight, date, unit)
             console.log("Insert!")
             req.open('GET', '/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + unit, true);
             req.addEventListener('load', function () {
@@ -250,6 +249,21 @@
                 let edit_weight = rows[i].weight
                 let edit_date = rows[i].date
                 let edit_unit = rows[i].unit
+
+
+                if (edit_reps == -1) {
+                    edit_reps = ""
+                }
+                if (edit_weight == -1) {
+                    edit_weight = 
+                }
+                if (edit_date == "9999-12-31") {
+                    edit_date = ""
+                }
+
+
+
+
                 edit_btn.innerHTML = 'Edit';
                 edit_btn.onclick = function () {
 
@@ -261,8 +275,10 @@
                     document.getElementById("edit-date").defaultValue = getFormattedDateYMR(edit_date)
                     if (edit_unit == "kg") {
                         document.getElementById("edit-kg").checked = true
-                    } else {
+                    } else if (edit_unit == "lbs") {
                         document.getElementById("edit-lbs").checked = true
+                    } else {
+                        document.getElementById("edit-na").checked = true
                     }
 
 
