@@ -149,9 +149,24 @@
 
                 var TBodyContent = document.createElement("td")
                 var delete_btn = document.createElement('button');
+                var record_id = rows[i].unit
                 delete_btn.innerHTML = 'Delete';
-                delete_btn.onclick = function () {
-                    alert('here be dragons'); return false;
+                delete_btn.onclick = function (record_id) {
+
+                    var req = new XMLHttpRequest();
+                    req.open('GET', '/delete&id=' + record_id, true);
+                    req.addEventListener('load', function () {
+                        if (req.status >= 200 && req.status < 400) {
+
+                            var response = JSON.parse(req.responseText);
+                            var response2 = JSON.parse(response.results);
+                            DOMtable(response2);
+                        } else {
+                            console.log("Error in network request: " + req.statusText);
+                        }
+                    });
+                    req.send(null);
+
                 };
                 TBodyContent.appendChild(delete_btn)
 
@@ -166,9 +181,6 @@
         }
 
 
-        function myFunction(name, job) {
-            console.log(name)
-        }
 
     </script>
 
