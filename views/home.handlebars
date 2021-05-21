@@ -83,7 +83,7 @@
                 if (req.status >= 200 && req.status < 400) {
 
                     var response = JSON.parse(req.responseText);
-                    console.log(response)
+                    console.log(response.results)
                     DOMtable(response);
                 } else {
                     console.log("Error in network request: " + req.statusText);
