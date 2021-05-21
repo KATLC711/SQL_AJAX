@@ -16,7 +16,7 @@
         <h1>Insert New Record</h1>
         <form id="insert-form">
             <label>Name</label><br>
-            <input type="text" name="name" id="name" required>
+            <input type="text" name="name" id="name">
             <br>
             <label>Reps</label><br>
             <input type="number" name="reps" id="reps"><br>
@@ -159,24 +159,26 @@
                 date = "9999-12-31"
             }
 
-            //console.log(name, reps, weight, date, unit)
-            console.log("Insert!")
-            req.open('GET', '/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + unit, true);
-            req.addEventListener('load', function () {
-                if (req.status >= 200 && req.status < 400) {
-                    console.log("Success!")
-                    document.getElementById("insert-form").reset();
-                    var response = JSON.parse(req.responseText);
-                    var response2 = JSON.parse(response.results);
-                    DOMtable(response2);
+            if (name != "") {
+                //console.log(name, reps, weight, date, unit)
+                console.log("Insert!")
+                req.open('GET', '/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + unit, true);
+                req.addEventListener('load', function () {
+                    if (req.status >= 200 && req.status < 400) {
+                        console.log("Success!")
+                        document.getElementById("insert-form").reset();
+                        var response = JSON.parse(req.responseText);
+                        var response2 = JSON.parse(response.results);
+                        DOMtable(response2);
 
 
-                } else {
-                    console.log("Error in network request: " + req.statusText);
-                }
-            });
-            req.send(null);
-            event.preventDefault();
+                    } else {
+                        console.log("Error in network request: " + req.statusText);
+                    }
+                });
+                req.send(null);
+                event.preventDefault();
+            }
         });
 
 
