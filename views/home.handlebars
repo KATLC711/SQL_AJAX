@@ -90,7 +90,7 @@
             req.open('GET', 'http://flip1.engr.oregonstate.edu:3636/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date, true);
             req.addEventListener('load', function () {
                 if (req.status >= 200 && req.status < 400) {
-                    var response = JSON.parse(req.responseText);
+
                     console.log("Success!")
 
                 } else {
