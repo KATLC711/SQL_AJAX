@@ -76,7 +76,7 @@
 
         PullData();
 
-        function PullData() {
+        function PullData(event) {
             var req = new XMLHttpRequest();
             req.open('GET', '/pull', true);
             req.addEventListener('load', function () {
