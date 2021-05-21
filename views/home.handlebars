@@ -145,8 +145,11 @@
         document.getElementById('submit').addEventListener('click', function (event) {
 
             var name = document.getElementById('name').value;
-            console.log(name === "")
-            if (name != "") {
+
+            if (name === "") {
+                alert("Please enter your Name in the form");
+                return
+            } else {
                 var req = new XMLHttpRequest();
                 var reps = document.getElementById('reps').value;
                 var weight = document.getElementById('weight').value;
