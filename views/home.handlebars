@@ -85,7 +85,7 @@
             var date = document.getElementById('date').value;
             var units = document.getElementById('units').value;
             console.log(name, reps, weight, date, units)
-            console.log('http://flip1.engr.oregonstate.edu:3636/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + units)
+            console.log('http://flip1.engr.oregonstate.edu:3636/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + units || "")
             req.open('GET', '/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + units, true);
             req.addEventListener('load', function () {
                 if (req.status >= 200 && req.status < 400) {
