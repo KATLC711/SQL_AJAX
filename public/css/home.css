@@ -22,4 +22,5 @@ table, th, td {
     display: none;
     margin:auto;
     border-style :solid;
+    padding:25px;
 }
