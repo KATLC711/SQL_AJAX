@@ -149,12 +149,11 @@
 
                 var TBodyContent = document.createElement("td")
                 var delete_btn = document.createElement('button');
-                var record_id = rows[i].id
+                let record_id = rows[i].id
                 delete_btn.innerHTML = 'Delete';
                 delete_btn.onclick = function () {
 
                     var req = new XMLHttpRequest();
-                    console.log('/delete?id=' + record_id)
                     req.open('GET', '/delete?id=' + record_id, true);
                     req.addEventListener('load', function () {
                         if (req.status >= 200 && req.status < 400) {
