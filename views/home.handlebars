@@ -16,15 +16,15 @@
         <h1>Insert New Record</h1>
         <form action="insert" method="GET">
             <label>Name</label><br>
-            <input type="text" name="name" required><br>
+            <input type="text" name="name" id="name" required><br>
             <label>Reps</label><br>
-            <input type="number" name="reps"><br>
+            <input type="number" name="reps" id="reps"><br>
             <label>Weight</label><br>
-            <input type="number" name="weight"><br>
+            <input type="number" name="weight" id="weight"><br>
             <label>Date</label><br>
-            <input type="date" name="date"><br>
+            <input type="date" name="date" id="date"><br>
             <label>Unit</label><br>
-            <input list="unit" name="unit" required>
+            <input list="unit" name="unit">
             <datalist id="unit">
                 <option value="kg">
                 <option value="lbs">
@@ -71,6 +71,25 @@
 
         </table>
     </div>
+
+    <script>
+
+        document.getElementById('submit').addEventListener('click', function (event) {
+            var req = new XMLHttpRequest();
+            var name = document.getElementById('name').value;
+            var reps = document.getElementById('reps').value;
+            var weight = document.getElementById('weight').value;
+            var date = document.getElementById('date').value;
+            var unit = document.getElementById('unit').value;
+
+            console.log(name, reps, weight, date, unit)
+
+        });
+
+
+
+
+    </script>
 
 
 </body>
