@@ -296,9 +296,9 @@
                     }
 
 
-                    if (getFormattedDateYMR(rows[i].date) != "9999-12-31") {
-                        document.getElementById("edit-date").defaultValue = getFormattedDateYMR(edit_date)
-                    }
+
+                    document.getElementById("edit-date").defaultValue = getFormattedDateYMR(edit_date)
+
 
                     if (edit_unit == "kg") {
                         document.getElementById("edit-kg").checked = true
