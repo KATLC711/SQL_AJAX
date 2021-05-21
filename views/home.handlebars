@@ -134,6 +134,7 @@
             var date = document.getElementById('date').value;
             var unit = document.querySelector('input[name = "unit"]:checked').value;
 
+            console.log(reps)
 
             console.log("Insert!")
             req.open('GET', '/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + unit, true);
