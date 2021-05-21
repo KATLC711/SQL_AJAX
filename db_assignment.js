@@ -70,6 +70,7 @@ app.get('/delete', function (req, res, next) {
       next(err);
       return;
     }
+    console.log(result)
     res.redirect("/pull");
   });
 });
