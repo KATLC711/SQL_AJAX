@@ -102,11 +102,11 @@
 
             if (name != "") {
                 var req = new XMLHttpRequest();
-                //var id = document.getElementById('edit-id').value;
-                //var reps = document.getElementById('edit-reps').value;
-                //var weight = document.getElementById('edit-weight').value;
-                //var date = document.getElementById('edit-date').value;
-                //var unit = document.querySelector('input[name = "edit-unit"]:checked').value;
+                var id = document.getElementById('edit-id').value;
+                var reps = document.getElementById('edit-reps').value;
+                var weight = document.getElementById('edit-weight').value;
+                var date = document.getElementById('edit-date').value;
+                var unit = document.querySelector('input[name = "edit-unit"]:checked').value;
 
 
                 console.log(name, reps, weight, date, unit)
@@ -120,7 +120,7 @@
                     date = "9999-12-31"
                 }
 
-                //req.open('GET', '/edit?id=' + id + '&name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + unit, true);
+                req.open('GET', '/edit?id=' + id + '&name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + unit, true);
                 req.addEventListener('load', function () {
                     if (req.status >= 200 && req.status < 400) {
                         console.log("Success!")
@@ -148,13 +148,14 @@
 
             if (name === "") {
                 alert("Please enter the Name in the form");
+                PullData();
                 return
             } else {
-                //var req = new XMLHttpRequest();
-                //var reps = document.getElementById('reps').value;
-                //var weight = document.getElementById('weight').value;
-                //var date = document.getElementById('date').value;
-                //var unit = document.querySelector('input[name = "unit"]:checked').value;
+                var req = new XMLHttpRequest();
+                var reps = document.getElementById('reps').value;
+                var weight = document.getElementById('weight').value;
+                var date = document.getElementById('date').value;
+                var unit = document.querySelector('input[name = "unit"]:checked').value;
 
                 console.log(name, reps, weight, date, unit)
                 if (reps == "") {
@@ -171,7 +172,7 @@
                 //console.log(name, reps, weight, date, unit)
                 console.log("Insert!")
 
-                //req.open('GET', '/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + unit, true);
+                req.open('GET', '/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + unit, true);
                 req.addEventListener('load', function () {
                     if (req.status >= 200 && req.status < 400) {
                         console.log("Success!")
@@ -277,7 +278,7 @@
                 delete_btn.onclick = function () {
 
                     var req = new XMLHttpRequest();
-                    //req.open('GET', '/delete?id=' + record_id, true);
+                    req.open('GET', '/delete?id=' + record_id, true);
                     req.addEventListener('load', function () {
                         if (req.status >= 200 && req.status < 400) {
                             var response = JSON.parse(req.responseText);
