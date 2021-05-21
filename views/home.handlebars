@@ -98,27 +98,28 @@
         PullData();
 
         document.getElementById('edit-submit').addEventListener('click', function (event) {
-            var req = new XMLHttpRequest();
-            var id = document.getElementById('edit-id').value;
             var name = document.getElementById('edit-name').value;
-            var reps = document.getElementById('edit-reps').value;
-            var weight = document.getElementById('edit-weight').value;
-            var date = document.getElementById('edit-date').value;
-            var unit = document.querySelector('input[name = "edit-unit"]:checked').value;
-
-
-            console.log(name, reps, weight, date, unit)
-            if (reps == "") {
-                reps = -1
-            }
-            if (weight == "") {
-                weight = -1
-            }
-            if (date == "") {
-                date = "9999-12-31"
-            }
 
             if (name != "") {
+                var req = new XMLHttpRequest();
+                var id = document.getElementById('edit-id').value;
+                var reps = document.getElementById('edit-reps').value;
+                var weight = document.getElementById('edit-weight').value;
+                var date = document.getElementById('edit-date').value;
+                var unit = document.querySelector('input[name = "edit-unit"]:checked').value;
+
+
+                console.log(name, reps, weight, date, unit)
+                if (reps == "") {
+                    reps = -1
+                }
+                if (weight == "") {
+                    weight = -1
+                }
+                if (date == "") {
+                    date = "9999-12-31"
+                }
+
                 req.open('GET', '/edit?id=' + id + '&name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + unit, true);
                 req.addEventListener('load', function () {
                     if (req.status >= 200 && req.status < 400) {
@@ -142,25 +143,28 @@
 
 
         document.getElementById('submit').addEventListener('click', function (event) {
-            var req = new XMLHttpRequest();
-            var name = document.getElementById('name').value;
-            var reps = document.getElementById('reps').value;
-            var weight = document.getElementById('weight').value;
-            var date = document.getElementById('date').value;
-            var unit = document.querySelector('input[name = "unit"]:checked').value;
 
-            console.log(name, reps, weight, date, unit)
-            if (reps == "") {
-                reps = -1
-            }
-            if (weight == "") {
-                weight = -1
-            }
-            if (date == "") {
-                date = "9999-12-31"
-            }
+            var name = document.getElementById('name').value;
 
             if (name != "") {
+                var req = new XMLHttpRequest();
+                var reps = document.getElementById('reps').value;
+                var weight = document.getElementById('weight').value;
+                var date = document.getElementById('date').value;
+                var unit = document.querySelector('input[name = "unit"]:checked').value;
+
+                console.log(name, reps, weight, date, unit)
+                if (reps == "") {
+                    reps = -1
+                }
+                if (weight == "") {
+                    weight = -1
+                }
+                if (date == "") {
+                    date = "9999-12-31"
+                }
+
+
                 //console.log(name, reps, weight, date, unit)
                 console.log("Insert!")
                 req.open('GET', '/insert?name=' + name + '&reps=' + reps + '&weight=' + weight + '&date=' + date + '&unit=' + unit, true);
