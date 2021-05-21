@@ -58,6 +58,7 @@ app.get('/insert', function (req, res, next) {
       next(err);
       return;
     }
+    res.send(context);
   });
 });
 
