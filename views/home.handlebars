@@ -297,11 +297,15 @@
                     if (edit_weight != -1) {
                         document.getElementById("edit_weight").defaultValue = edit_weight
                     } else {
-                        document.getElementById("edit-reps").defaultValue = ""
+                        document.getElementById("edit_weight").defaultValue = ""
                     }
 
+                    if (getFormattedDateYMR(edit_date) != "9999-12-31") {
+                        document.getElementById("edit_date").defaultValue = getFormattedDateYMR(edit_date)
+                    } else {
+                        document.getElementById("edit_date").defaultValue = ""
+                    }
 
-                    document.getElementById("edit-date").defaultValue = getFormattedDateYMR(edit_date)
 
 
                     if (edit_unit == "kg") {
