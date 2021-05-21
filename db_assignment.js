@@ -36,7 +36,6 @@ app.get('/insert', function (req, res, next) {
       next(err);
       return;
     }
-    context.status_msg = "Inserted id " + result.insertId;
     res.redirect('/');
   });
 });
