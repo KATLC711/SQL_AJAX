@@ -201,7 +201,14 @@
                 TBodyRow.appendChild(TBodyContent)
 
                 var TBodyContent = document.createElement("td")
-                TBodyContent.textContent = rows[i].reps
+
+                if (rows[i].reps == -1) {
+                    TBodyContent.textContent = ""
+                } else {
+                    TBodyContent.textContent = rows[i].reps
+                }
+
+
                 TBodyRow.appendChild(TBodyContent)
 
                 var TBodyContent = document.createElement("td")
@@ -252,20 +259,13 @@
 
 
 
-
-
-
-
-
-
-
                 edit_btn.innerHTML = 'Edit';
                 edit_btn.onclick = function () {
 
                     document.getElementById("edit-form").style.display = "block";
                     document.getElementById("edit-id").value = edit_id
                     document.getElementById("edit-name").defaultValue = edit_name
-                    document.getElementById("edit-reps").defaultValue = ""
+                    document.getElementById("edit-reps").defaultValue = edit_reps
                     document.getElementById("edit-weight").defaultValue = edit_weight
                     document.getElementById("edit-date").defaultValue = getFormattedDateYMR(edit_date)
                     if (edit_unit == "kg") {
